@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: topping-service-ui
+spec:
+  selector:
+    matchLabels:
+      app: topping-service-ui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: topping-service-ui
+    spec:
+      containers:
+      - name: topping-service-ui
+        image: clearlifezhang/topping-service-ui:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: topping-service-ui
+spec:
+  selector:
+    app: topping-service-ui
+  type: NodePort
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 80
+      nodePort: 30000
+
