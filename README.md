@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the frontend of [the topping-service web application](https://github.com/clearlifezhang/pizza-topping-service/blob/main/README.md).
 
 ## Available Scripts
 
