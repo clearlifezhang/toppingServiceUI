@@ -27,6 +27,9 @@ COPY --from=0 /app/build /usr/share/nginx/html
 # Copy the Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-## build command
+## build command after configuring Nginx as a reverse proxy
+# docker build --build-arg REACT_APP_API_BASE_URL=http://localhost:30000 -t topping-service-ui:latest .
+
+## configure Nginx as a normal web server, not a reverse proxy
 # docker build --build-arg REACT_APP_API_BASE_URL=http://localhost:30080 -t topping-service-ui:latest .
 
